@@ -1,0 +1,228 @@
+
+
+#calendarbody {
+	width: 100%;
+	/*background-color: white;*/
+}
+
+.monthheader {
+	text-align: center;
+	background-color: black;
+	background-color: #CCCCCC !important;
+
+}
+
+.monthchanger {
+	display: inline;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0em;
+}
+
+.monthchanger.left {
+	float: left;
+
+}
+
+.monthchanger.right {
+	float: right;
+	
+}
+
+.monthheader h2 {
+	/*color: white;*/
+	margin: 0em;
+}
+
+.week {
+	display: table;
+    table-layout: fixed;
+	width: 100%;
+	
+}
+
+.daymatrix {
+	padding-top: 0em;
+	background-color: #EEEEEE;
+	/*padding-bottom: 0em;*/
+}
+
+.weekheader {
+	font-weight: bold;
+	background-color: black;
+}
+
+.day {
+/*	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;*/
+	display: table-cell;
+	width: 100%;
+	color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #EEEEEE;
+	height: 5em;
+	background-color: white;
+	position: relative;
+	background-color: #EEEEEE;
+	/*overflow: visible;*/
+
+}
+
+.weekday {
+	display: table-cell;
+	width: 100%;
+	color: black;
+	/*border-style: solid;*/
+	/*height: 3em;*/
+}
+
+.weekheader {
+	/*background-color: #DDDDDD !important;*/
+	/*width: 100%;*/
+	border-radius: 0;
+}
+
+
+.weekheader .weekday {
+	/*color: white;*/
+	border-color: black;
+	text-align: center;
+}
+
+.monthboxes {
+	background-color: white;
+}
+
+.currentdaybox {
+	border-color: #CCCCCC;
+}
+
+.eventday {
+	background-color: #54B5AC;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+.datenumber {
+	/*font-weight: bold;*/
+	padding: 0.25em 0.5em;
+
+}
+
+.eventname {
+	visibility: hidden;
+}
+
+.monthboxes .eventname {
+	visibility: visible;
+	/*font-weight: bold;*/
+	font-size: 0.8em;
+	background-color: #54B5AC;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0em 0.2em;
+    margin: 0em 0.5em;
+    /*width: 100%;*/
+    /*height: 2.6em;*/
+    white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	margin-bottom: 0.2em;
+
+}
+
+
+.eventname.startevent {
+	margin-right: 0em;
+	/*overflow: visible;*/
+}
+
+/*.eventname.startevent span {
+	background-color: #54B5AC;
+	padding: 0em 0.2em;
+}*/
+
+.eventname.midevent {
+	margin-left: 0em;
+	margin-right: 0em;
+	text-align: center;
+}
+
+.eventname.endevent {
+	margin-left: 0em;
+	text-align: right;
+
+}
+
+/*.eventname.midevent:after,
+.eventname.midevent::after {
+    position: absolute;
+    top: auto;
+    left: 100%;
+    margin-right: 0%;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 0.75em transparent;
+    border-left: solid 0.8em #54B5AC;
+    border-bottom: solid 0.75em transparent;
+    z-index: 9999;
+}
+
+.eventname.startevent:after,
+.eventname.startevent::after {
+    position: absolute;
+    top: auto;
+    left: 100%;
+    margin-right: 0%;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 0.75em transparent;
+    border-left: solid 0.8em #54B5AC;
+    border-bottom: solid 0.75em transparent;
+    z-index: 9999;
+}*/
+
+/*.eventname.midevent:after,
+.eventname.midevent::after {
+    position: absolute;
+    top: auto;
+    right: 100%;
+    margin-left: 0%;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: solid 0.75em transparent;
+     border-right: solid 0.8em #54B5AC; 
+    border-bottom: solid 0.75em transparent;
+    z-index: 9999;
+}*/
+
+
+.eventcontent {
+
+}
+
+#details img {
+	width: 100%;
+	height: auto;
+}

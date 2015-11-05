@@ -1,0 +1,131 @@
+<html>
+  <head>
+  	<title>SOC Leadership Program Calendar</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/material.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/ripples.css">
+  	<link rel="stylesheet" type="text/css" href="css/calendar.css">
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+  	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  	<script type="text/javascript" src="js/getCalendar.js"></script>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <div class="navbar navbar-default shadow-z-2">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand include-logo" href="#">Leadership 1 2015</a>
+        </div>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li class="dropdown">
+                    <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Browse Registrants <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="browse_registrants.php">By Name</a></li>
+                        <li><a href="browse_registrants.php#role">By Role</a></li>
+                    </ul>
+                </li> -->
+                <li class="active"><a href="#">Calendar</a></li>
+                <li><a href="#">Contacts</a></li>
+
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="mainbox">
+       <!--  <div class="title">
+          <span class="soc">Sasamat Outdoor Centre's</span>
+          <span class="LPC">Leadership Program Calendar</span>
+          <span class="program">Leadership 1</span>
+        </div> -->
+        <div class="calendar panel panel-default">
+          <div class="week monthheader panel-heading">
+            <h2 id="monthTitle"></h2>
+          </div>
+          <div class="week weekheader panel-heading">
+            <div class='weekday'>Sunday</div>
+            <div class='weekday'>Monday</div>
+            <div class='weekday'>Tuesday</div>
+            <div class='weekday'>Wednesday</div>
+            <div class='weekday'>Thursday</div>
+            <div class='weekday'>Friday</div>
+            <div class='weekday'>Saturday</div>
+          </div>
+          <div class="daymatrix panel-body">
+            <script type="text/javascript">
+              createCalendar();
+              populateCalendar();
+              // populateEvents();
+            </script>
+          </div>
+        </div>
+      </div>
+    	
+      <div class="well eventdetails">
+        <div class="detailspage">
+          <h1 id="eventname">Event Name</h1>
+          <hr>
+          <div id="eventcontent">
+            <div id="location">
+            </div>
+            <br>
+            <div>
+              Begins: <span id="start"></span>
+            </div>
+            <div>
+              Ends: <span id="end"></span>
+            </div>
+            <br>
+            <div>
+              Drop Off: <span id="dropoff"></span>
+            </div>
+            <br>
+            <div>
+              Pick Up: <span id="pickup"></span>
+            </div>
+            <br>
+            <div>
+              Details: 
+              <span id="details"></span>
+            </div>
+            <br>
+            <div>
+              Attachments: 
+              <span id="attachments"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="bootstrap/js/ripples.js"></script>
+    <script src="bootstrap/js/material.js"></script>
+    <!-- <script src="bootstrap/js/nouislider.js"></script> -->
+    <script>
+        $(document).ready(function() {
+            // This command is used to initialize some elements and make them work properly
+            $.material.init();
+        });
+    </script>
+  </body>
+</html>
+
