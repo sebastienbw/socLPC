@@ -43,12 +43,17 @@
 	display: table;
     table-layout: fixed;
 	width: 100%;
-	
+	/*height: 20%;*/
+}
+
+.daymatrix .week {
+	/*height: 20%;*/
 }
 
 .daymatrix {
 	padding-top: 0em;
 	background-color: #EEEEEE;
+	/*height: 70%;*/
 	/*padding-bottom: 0em;*/
 }
 
@@ -67,10 +72,11 @@
 	border-style: solid;
 	border-width: 1px;
 	border-color: #EEEEEE;
-	height: 5em;
+	height: 100%;
 	background-color: white;
 	position: relative;
 	background-color: #EEEEEE;
+	padding-bottom: 0.3em;
 	/*overflow: visible;*/
 
 }
@@ -105,7 +111,7 @@
 }
 
 .eventday {
-	background-color: #54B5AC;
+	/*background-color: #54B5AC;*/
 	cursor: pointer;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -123,14 +129,32 @@
 }
 
 .eventname {
+	/*position: absolute;*/
+	/*width: 100%;*/
 	visibility: hidden;
+	padding: none;
+	-webkit-box-shadow: none
+	-moz-box-shadow: none
+	box-shadow: none;
+	/*-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;*/
+	-webkit-transition: box-shadow 0.5s;
+    transition: box-shadow 0.5s;
+}
+
+.eventname:hover {
+	/*overflow: visible;*/
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
 .monthboxes .eventname {
 	visibility: visible;
 	/*font-weight: bold;*/
 	font-size: 0.8em;
-	background-color: #54B5AC;
+	/*background-color: #54B5AC;*/
 	cursor: pointer;
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -226,3 +250,4 @@
 	width: 100%;
 	height: auto;
 }
+

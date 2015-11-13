@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Rockwell';
+  font-style: normal;
+  /*font-weight: 400;*/
+  src: local('Rockwell'), local('Rockwell-Regular'), local('Rockwell-Regular'), url(../fonts/ROCK.TTF) format('ttf');
+}
+@font-face {
+  font-family: 'Rockwell';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Rockwell Bold'), local('Rockwell-Bold'), local('Rockwell-Bold'), url(../fonts/ROCKB.TTF) format('ttf');
+}
+@font-face {
+  font-family: 'Rockwell';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Rockwell Black'), local('Rockwell-Black'), local('Rockwell-Black'), url(../fonts/ROCKEB.TTF) format('ttf');
+}

@@ -1,15 +1,35 @@
 html {
 	border: border-box;
 	font-family: Aller;
-	background-color: gray;
+	/*background-color: gray;*/
 }
 
 body {
 	margin: 0em;
+	background-color: white;
+	overflow: hidden;
+
 }
 
 h1 {
 	margin: 0em;
+	font-family: Rockwell;
+	font-weight: bold;
+}
+
+h2 {
+	font-family: Rockwell;
+	font-weight: bold;
+}
+
+h3 {
+	font-family: Rockwell;
+	font-weight: bold;
+}
+
+h4 {
+	font-family: Rockwell;
+	font-weight: bold;
 }
 
 *, *:after, *:before {
@@ -18,35 +38,86 @@ h1 {
 	box-sizing: border-box;
 }
 
-.container {
-	margin: 0em;
+.nav.navbar-nav.navbar-right {
+	margin-right: 0em;
+}
+
+.container-fluid.container-static {
+	top: 0em;
+	padding: 0em;
+	position: fixed;
+	width: 100%;
+}
+
+.container-fluid.container-fixed {
 	padding: 0em;
 	width: 100%;
 }
 
-.mainbox {
-	width: 65%;
-	float: left;
+.no-padding {
+	padding: 0 !important;
+}
+
+.vert-item {
+	min-height: 100%;  
+  	min-height: 100vh; 
+  	display: flex;
+  	align-items: center;
+}
+
+.bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+    background-color: #222222;
+}
+
+.bgshader {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/bgshade.png");
+  	background-repeat: repeat;
+  	overflow: hidden;
+
 }
 
 .calendar {
-	border-style: solid;
-	margin: 2em;
-	/*display: inline-block;*/
-	
+	padding: 2em;
+	-webkit-transition: width 1s, margin 1s;
+    transition: width 1s, margin 1s;
+}
+
+.calendar .panel {
+	margin-bottom: 0em;
+}
+
+.calendar.shared {
+	/*width: 65%;*/
+}
+
+.calendar.closed {
+	/*margin-left: -100%;*/
 }
 
 .eventdetails {
-	width: 35%;
-	/*display: inline-block;*/
-	float: left;
+	position: fixed;
+	right: 0em;
 	font-weight: bold;
-	/*min-height: 100%;*/
-	/*max-height: 100%;*/
-	margin-bottom: 0em !important;
-	height: 90%;
-	/*position: relative;*/
+	/*padding-bottom: 2em;*/
+	-webkit-transition: width 1s, right 1s;
+    transition: width 1s, right 1s;
+    overflow: auto;
+    height: calc(100% - 60px);
+}
 
+.eventdetails.closed {
+	display: none;
+}
+
+.well.eventdetails {
+	border-radius: none;
+	/*margin-bottom: 2em;*/
 }
 
 .eventdetails span {
@@ -54,42 +125,284 @@ h1 {
 
 }
 
-.detailspage {
+.navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 8000;
+	-webkit-transition: top 1s;
+    transition: top 1s;
+    top: 0em;
+}
 
+.navbar.hideup {
+	top: -6em;
+}
+
+.nav-spacer { 
+	height: 60px;
+}
+
+.login {
+	position: relative;
+	height: 6.5em;
+}
+
+.hidden {
+	/*visibility: hidden;*/
+}
+
+.btn-full-width {
+	width: 100%;
+}
+
+.btn-list {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navtitle {
+	font-weight: bold;
+	font-family: Rockwell;
+}
+
+.theme-blue {
+	background-color: rgba(33, 150, 243, 0.8);
+	color: white;
+}
+
+.theme-lime {
+	background-color: rgba(205, 220, 57, 0.8);
+}
+
+.theme-pink {
+	background-color: rgba(233, 30, 99, 0.8);
+	color: white;
+}
+
+.bg-blue {
+	color: rgba(33, 150, 243, 0.2);
+}
+
+.bg-lime {
+	color: rgba(205, 220, 57, 0.2);
+}
+
+.bg-pink {
+	color: rgba(233, 30, 99, 0.2);
+}
+
+.bg-gray {
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.slideshow
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+/*	position: fixed; 
+	top: -50%; 
+	left: -50%; 
+	width: 200%; 
+	height: 200%;*/
+
+	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-position: center;
+}
+
+#programselecttitle {
+	color: white;
+	text-align: right;
+	font-size: 3em;
+}
+
+.contactspage {
+	position: absolute;
+	width: 100%;
+	padding: 2em;
+
+	/*margin-top: 6em;*/
+	/*min-height: 100%;  
+  	min-height: 100vh; 
+
+  	display: flex;
+/*  	align-items: center;*/
+/*  	overflow: hidden;
+
+	position: fixed;
 	width: 100%;
 	height: 100%;
-	margin: auto;
-	padding: 1em;
-	background-color: white;
-	/*max-height: 100%;*/
-	overflow: auto;
-}
-
-.navbar {
-	margin-bottom: 0;
-}
-
-.footer {
-	
-	/*background-color: black;*/
-	width: 100%;
-	background-image: url("../img/treestemp.png");
-	background-size: contain;
-	background-repeat: repeat-x;
-	position: absolute;
-	bottom: 0em;
-	height: 10%;
+	bottom: 0%;
 	overflow: hidden;
-	/*z-index: 9999;*/
 
-	/*display: inline;*/
+	-webkit-transition: bottom 1s;
+    transition: bottom 1s;*/
+
 }
 
+#eventcontent div {
+	margin-top: 1em;
+}
 
-.footer img {
-	height:100%;
-    width: auto;
-    background-repeat: repeat-x;
-	/*width: 100%;*/
-	/*bottom: -20em;*/
+#eventcontent div.tight {
+	margin-top: 0em;
+}
+
+.closeevent {
+	display: none;
+	width: 100%;
+	text-align: right;
+	position: fixed;
+	/*top: 1em;*/
+	right: 1em;
+	margin-top: -1em;
+}
+
+.closeevent .btn {
+	padding: 0.5em;
+}
+
+.contactspage.closed {
+/*	bottom: -100%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;*/
+}
+
+.contactsinfo {
+	position: relative;
+	/*top: 60px;*/
+	/*top: 0;*/
+	/*margin: auto;
+	margin-top: 6em;
+	margin-bottom: 2em;*/
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin: 2em auto;*/
+
+	/*padding: 2em;*/
+	/*margin: 2em;*/
+	/*height: auto;
+	/*overflow: auto;*/
+	/*max-height: 100%;*/
+}
+
+.contactsinfo.panel {
+	margin-bottom: 0em;
+
+}
+
+.contactname {
+	display: block;
+	font-weight: bold;
+}
+
+.contactdescription {
+	display: block;
+	font-style: italic;
+}
+
+.contactinfo {
+	/*margin: 0 auto;*/
+	margin-left: 1em;
+	margin-top: 0.5em;
+	width: 80%;
+}
+
+.contactinfo i {
+	vertical-align: middle;
+}
+
+@media only screen and (max-width: 1199px) {
+
+	.nav-spacer{
+		height: 50px;
+	}
+
+	.eventdetails {
+	    height: calc(100% - 50px);
+	}
+
+	.contactsinfo {
+		/*top: 50px;*/
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.vert-row {
+		margin-top: 30%;
+	}
+
+	.vert-item {
+		min-height: auto;  
+	  	min-height: auto; 
+	  	display: auto;
+	  	align-items: auto;
+	}
+
+	#programselecttitle {
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	    padding-left: 1em;
+	    padding-right: 1em;
+	    text-align: center;
+	}
+
+	.btn-full-width {
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	.btn.monthchanger {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+
+	.calendar {
+		padding: 1em;
+	}
+
+	/*#monthtitle {
+		font-size: 2em;
+	}*/
+
+	.weekday span {
+		display: none;
+	}
+	.weekday:nth-of-type(1):after {
+		content: "Sun";
+	}
+	.weekday:nth-of-type(2):after {
+		content: "Mon";
+	}
+	.weekday:nth-of-type(3):after {
+		content: "Tue";
+	}
+	.weekday:nth-of-type(4):after {
+		content: "Wed";
+	}
+	.weekday:nth-of-type(5):after {
+		content: "Thu";
+	}
+	.weekday:nth-of-type(6):after {
+		content: "Fri";
+	}
+	.weekday:nth-of-type(7):after {
+		content: "Sat";
+	}
+
+	.contactsinfo {
+		width: 100%;
+	}
+
+	.closeevent {
+		display: block;
+	}
 }

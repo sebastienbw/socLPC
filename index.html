@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/material.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/ripples.css">
+    <link rel="stylesheet" type="text/css" href="css/rockwell.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
   	<link rel="stylesheet" type="text/css" href="css/calendar.css">
   	<link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -14,112 +16,163 @@
   	<script type="text/javascript" src="js/getCalendar.js"></script>
   </head>
   <body>
-    <!-- NAVIGATION -->
-    <div class="navbar navbar-default shadow-z-2">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand include-logo" href="#">Leadership 1 2015</a>
-        </div>
-      <div class="navbar-collapse collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
-                <!-- <li class="dropdown">
-                    <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Browse Registrants <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="browse_registrants.php">By Name</a></li>
-                        <li><a href="browse_registrants.php#role">By Role</a></li>
-                    </ul>
-                </li> -->
-                <li class="active"><a href="#">Calendar</a></li>
-                <li><a href="#">Contacts</a></li>
-
-                
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-               <li><a href="#">Log Out</a></li>
-          </ul>
-        </div>
+    <!-- BACKGROUND -->
+    <div class="bg">
+      <div class="slideshow">
+      </div>
+      <div class="bgshader">
+      </div>
     </div>
 
-    <div class="container">
-      <div class="mainbox">
-       <!--  <div class="title">
-          <span class="soc">Sasamat Outdoor Centre's</span>
-          <span class="LPC">Leadership Program Calendar</span>
-          <span class="program">Leadership 1</span>
-        </div> -->
-        <div class="calendar panel panel-default">
-          <div class="week monthheader panel-heading">
-            <h2 id="monthTitle"></h2>
+    <!-- NAVIGATION -->
+    <div class="navbar navbar-static-top shadow-z-2 hideup">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand include-logo" id="navtitle" href="#">Leadership</a>
+      </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+              <li id="navCalendar"><a href="#" onclick="clickCalendar()">Calendar</a></li>
+              <li id="navContacts"><a href="#" onclick="clickContacts()">Contacts</a></li> 
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+             <li><a href="#" onclick="processLogout()">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid container-static login-screen animated fadeInUp">
+      <div class="row vert-row">
+
+        <div class="col-sm-4 col-sm-offset-2 col-xs-12 vert-item">
+          <h1 id="programselecttitle">Select Your Program</h1>
+        </div>
+
+        <div class="col-sm-4 col-xs-12 vert-item">
+          <div class="btn-list">
+            <a onclick="processLogin('L1')" id="btnL1" class="btn btn-lg btn-full-width btn-material-blue">Leadership 1</a>
+          <a onclick="processLogin('L2')" id="btnL2" class="btn btn-lg btn-full-width btn-material-lime">Leadership 2</a>
+          <a onclick="processLogin('VOL')" id="btnVol" class="btn btn-full-width btn-material-pink">Leadership Volunteer</a>
           </div>
-          <div class="week weekheader panel-heading">
-            <div class='weekday'>Sunday</div>
-            <div class='weekday'>Monday</div>
-            <div class='weekday'>Tuesday</div>
-            <div class='weekday'>Wednesday</div>
-            <div class='weekday'>Thursday</div>
-            <div class='weekday'>Friday</div>
-            <div class='weekday'>Saturday</div>
-          </div>
-          <div class="daymatrix panel-body">
-            <script type="text/javascript">
-              createCalendar();
-              populateCalendar();
-              // populateEvents();
-            </script>
-          </div>
+          
         </div>
       </div>
-    	
-      <div class="well eventdetails">
-        <div class="detailspage">
+    </div>
+    <div class="nav-spacer">
+    </div>
+
+
+    <div class="container-fluid container-fixed no-padding contentscreen hidden">
+      <div class="row-fluid">
+        <div class="col-xs-12 col-sm-12 calendar animated fadeInDown">
+          <div class="panel panel-default">
+            <div class="week monthheader panel-heading">
+              <h2 id="monthTitle"></h2>
+            </div>
+            <div class="week weekheader panel-heading">
+              <div class='weekday'><span>Sunday</span></div>
+              <div class='weekday'><span>Monday</span></div>
+              <div class='weekday'><span>Tuesday</span></div>
+              <div class='weekday'><span>Wednesday</span></div>
+              <div class='weekday'><span>Thursday</span></div>
+              <div class='weekday'><span>Friday</span></div>
+              <div class='weekday'><span>Saturday</span></div>
+            </div>
+            <div class="daymatrix panel-body">
+              <script type="text/javascript">
+                createCalendar();
+                populateCalendar();
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 well eventdetails animated hidden">
+          <div class="closeevent">
+            <div class="btn btn-default btn-right" onclick="closeEvent()">
+              <i class="mdi-navigation-close"></i>
+            </div>
+          </div>
           <h1 id="eventname">Event Name</h1>
           <hr>
           <div id="eventcontent">
-            <div id="location">
-            </div>
-            <br>
-            <div>
-              Begins: <span id="start"></span>
-            </div>
-            <div>
-              Ends: <span id="end"></span>
-            </div>
-            <br>
-            <div>
-              Drop Off: <span id="dropoff"></span>
-            </div>
-            <br>
-            <div>
-              Pick Up: <span id="pickup"></span>
-            </div>
-            <br>
-            <div>
-              Details: 
-              <span id="details"></span>
-            </div>
-            <br>
-            <div>
-              Attachments: 
-              <span id="attachments"></span>
-            </div>
+            
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer">
+
+      <div class="row-fluid">
+        <div class="contactspage animated hidden">
+          <div class="contactsinfo panel panel-default">
+            <div class="panel-heading">
+              <h1>Contacts</h1>
+            </div>
+            <div class="panel-body">
+              <h4>Leadership Coordinator</h4>
+              <span class="contactname">
+                Sebastien Bernier-Wong
+              </span>
+              <span class="contactdescription">
+                Schedules, lesson details and program information.
+              </span>
+              <div class="contactinfo">
+                <i class="mdi-communication-email"></i> leadership@sasamat.org
+              </div>
+              
+              <hr>
+
+              <h4>Programs Director</h4>
+              <span class="contactname">
+                Kristen Hyodo
+              </span>
+              <span class="contactdescription">
+                Almost anything!
+              </span>
+              <div class="contactinfo">
+                <i class="mdi-communication-email"></i> kristen@sasamat.org
+                <br>
+                <i class="mdi-communication-call"></i> (604) 939-2268 Ext 5
+              </div>
+
+              <hr>
+
+              <h4>Office Manager</h4>
+              <span class="contactname">
+                Candice Pokoyoway
+              </span>
+              <span class="contactdescription">
+                Payments and registration.
+              </span>
+              <div class="contactinfo">
+                <i class="mdi-communication-email"></i> info@sasamat.org
+                <br>
+                <i class="mdi-communication-call"></i> (604) 939-2268 Ext 1
+              </div>
+            </div>
+          </div>
+        <!-- </div> -->
+        
+      
 
     </div>
+        
+    	
+      
+
+    <div class="contactspage animated fadeInUp fadeOutDown">
+
+          
+    </div>
+
 
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <script src="bootstrap/js/ripples.js"></script>
     <script src="bootstrap/js/material.js"></script>
-    <!-- <script src="bootstrap/js/nouislider.js"></script> -->
     <script>
         $(document).ready(function() {
             // This command is used to initialize some elements and make them work properly
